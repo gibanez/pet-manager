@@ -1,0 +1,7 @@
+{
+  // Instrucciones para OpenCode (se suman a AGENTS.md).
+  // AGENTS.md = convenciones genéricas del stack (no se toca por proyecto).
+  // proyect.md = documentación específica de este proyecto (se completa en cada fork).
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["proyect.md"]
+}

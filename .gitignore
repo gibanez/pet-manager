@@ -1,0 +1,29 @@
+# Dependencias
+/vendor/
+/node_modules/
+
+# Entorno y secretos
+/.env
+/.env.*
+!/.env.example
+
+# Base de datos y archivos no públicos
+/storage/*.sqlite
+/storage/*.sqlite3
+/storage/*.db
+
+# Deploy / paquetes
+/deploy/
+*.zip
+*.rar
+
+# Builds de frontend (si se agregan apps con build)
+/public/_astro/
+
+# Herramientas
+.phpunit.result.cache
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

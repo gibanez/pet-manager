@@ -1,0 +1,257 @@
+:root {
+    --bg: #0b1020;
+    --surface: #121a31;
+    --surface-2: #182242;
+    --ink: #eef2ff;
+    --muted: #9aa8c7;
+    --accent: #5b8cff;
+    --danger: #ff6b81;
+    --line: rgba(255, 255, 255, 0.1);
+    --radius: 12px;
+    --font: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(1000px 500px at 90% -10%, rgba(91, 140, 255, 0.16), transparent 60%), var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    line-height: 1.55;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+code {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.1em 0.4em;
+    font-size: 0.88em;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--line);
+    background: rgba(11, 16, 32, 0.75);
+    backdrop-filter: blur(8px);
+}
+
+.brand {
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.brand span {
+    color: var(--accent);
+}
+
+.brand small {
+    color: var(--muted);
+    font-size: 0.7em;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+h1 {
+    margin: 0 0 0.25rem;
+    font-size: 1.7rem;
+}
+
+h2 {
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+}
+
+.muted {
+    color: var(--muted);
+    margin: 0;
+}
+
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+}
+
+.auth-panel {
+    max-width: 420px;
+    margin: 3rem auto 0;
+}
+
+.form {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.form label {
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.form input,
+.form textarea,
+.form select {
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--surface-2);
+    color: var(--ink);
+    font: inherit;
+}
+
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--surface-2);
+    color: var(--ink);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent), #7c5cff);
+    border-color: transparent;
+    color: #fff;
+}
+
+.btn-ghost {
+    background: transparent;
+}
+
+.btn-danger {
+    background: transparent;
+    border-color: rgba(255, 107, 129, 0.5);
+    color: var(--danger);
+}
+
+.error {
+    min-height: 1.3em;
+    margin: 0;
+    color: var(--danger);
+    font-size: 0.88rem;
+}
+
+.section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 0 1.25rem;
+}
+
+.table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.92rem;
+}
+
+th {
+    background: var(--surface-2);
+    color: var(--muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.row-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.row-actions .btn {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.82rem;
+}
+
+#pages-empty {
+    padding: 1.25rem;
+}
+
+@media (max-width: 640px) {
+    .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .row-actions {
+        justify-content: flex-start;
+    }
+}

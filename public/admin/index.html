@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CMS — Base DDD</title>
+    <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">Base<span>DDD</span> <small>CMS</small></div>
+        <div class="topbar-actions">
+            <a href="/" target="_blank" rel="noopener">Ver sitio</a>
+            <button id="logout" class="btn btn-ghost" type="button" hidden>Cerrar sesión</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="login-view" class="panel auth-panel">
+            <h1>Ingresar</h1>
+            <p class="muted">Usuario de prueba: <code>admin@example.com</code> / <code>admin1234</code></p>
+            <form id="login-form" class="form">
+                <label>
+                    Email
+                    <input type="email" name="email" required autocomplete="username" value="admin@example.com">
+                </label>
+                <label>
+                    Contraseña
+                    <input type="password" name="password" required autocomplete="current-password" value="admin1234">
+                </label>
+                <button class="btn btn-primary" type="submit">Entrar</button>
+                <p id="login-error" class="error" role="alert"></p>
+            </form>
+        </section>
+
+        <section id="app-view" hidden>
+            <div class="section-head">
+                <div>
+                    <h1>Páginas</h1>
+                    <p class="muted">Contenido dinámico del sitio.</p>
+                </div>
+                <button id="new-page" class="btn btn-primary" type="button">Nueva página</button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Slug</th>
+                            <th>Título</th>
+                            <th>Estado</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="pages-body"></tbody>
+                </table>
+                <p id="pages-empty" class="muted" hidden>No hay páginas todavía.</p>
+            </div>
+
+            <section id="page-form-panel" class="panel" hidden>
+                <h2 id="page-form-title">Nueva página</h2>
+                <form id="page-form" class="form">
+                    <input type="hidden" name="id">
+                    <label>
+                        Slug
+                        <input type="text" name="slug" required maxlength="120" placeholder="home">
+                    </label>
+                    <label>
+                        Título
+                        <input type="text" name="title" required maxlength="190">
+                    </label>
+                    <label>
+                        Contenido
+                        <textarea name="body" rows="8" maxlength="20000"></textarea>
+                    </label>
+                    <label>
+                        Estado
+                        <select name="status">
+                            <option value="active">Activa</option>
+                            <option value="inactive">Inactiva</option>
+                        </select>
+                    </label>
+                    <div class="form-actions">
+                        <button class="btn btn-primary" type="submit">Guardar</button>
+                        <button id="cancel-page" class="btn btn-ghost" type="button">Cancelar</button>
+                        <span id="page-form-status" class="muted" role="status"></span>
+                    </div>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <script src="/admin/admin.js"></script>
+</body>
+</html>

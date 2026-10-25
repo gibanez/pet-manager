@@ -1,0 +1,12 @@
+DirectoryIndex index.html index.php
+
+RewriteEngine On
+
+# Admin: SPA/estático — cualquier ruta cliente que no sea un archivo real cae al index.html del panel.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^admin/ admin/index.html [L]
+
+# Todo lo que no sea archivo ni directorio real (ej. /api/*) cae al entry point de Slim.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]

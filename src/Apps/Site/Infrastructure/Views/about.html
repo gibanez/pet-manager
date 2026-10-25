@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About us — Base DDD</title>
+    <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="/">Base<span>DDD</span></a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about" class="is-active">About us</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page">
+            <p class="eyebrow">Quiénes somos</p>
+            <h1>Sobre nosotros</h1>
+            <p class="lead">Esta es una página de ejemplo servida por el mismo Slim que expone la API.</p>
+
+            <div class="prose">
+                <p>La base separa el código en <strong>Domain</strong>, <strong>Application</strong> e <strong>Infrastructure</strong>. Cada módulo de negocio vive en su carpeta y se resuelve por autowiring, sin instanciar nada a mano.</p>
+                <p>El contenido de la home sí es dinámico: se pide a <code>GET /api/public/pages/home</code> y se puede editar desde el CMS.</p>
+                <p>Para agregar una página nueva, sumá una vista en <code>site/Infrastructure/Views</code> y su ruta en <code>routes.php</code>.</p>
+            </div>
+
+            <div class="actions">
+                <a class="btn btn-primary" href="/contact">Hablemos</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Base DDD</p>
+    </footer>
+
+    <script src="/assets/site.js"></script>
+</body>
+</html>
